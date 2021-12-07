@@ -1,0 +1,325 @@
+//  <script src="./html2pdf.bundle.js" defer>
+
+// let el = document.getElementById('printMe');
+// let opt = {
+//   margin: 1,
+//   filename: 'myfile.pdf',
+//   image: { type: 'jpeg', quality: 1 },
+//   html2canvas: { scale: 2 },
+//   jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' },
+// };
+// html2pdf()
+//   .set(opt)
+//   .from(el)
+//   .toPdf()
+//   .output('datauristring')
+//   .then(function (pdfAsString) {
+//     // The PDF has been converted to a Data URI string and passed to this function.
+//     // Use pdfAsString however you like (send as email, etc)! For instance:
+//     console.log(pdfAsString);
+//   });
+//   </script>
+//   <script defer>
+// document.getElementById('push').addEventListener('click', function () {
+//   // pdfDivload();
+//   console.log('say hi');
+// });
+// document.getElementById('pdf').onload = function () {
+//   // pdfDivload();
+//   let el = document.getElementById('printMe');
+//   let opt = {
+//     margin: 1,
+//     filename: 'myfile.pdf',
+//     image: { type: 'jpeg', quality: 0.98 },
+//     // html2canvas: { scale: 1 },
+//     jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' },
+//   };
+//   const p = document.getElementById('push');
+//   p.addEventListener('click', () => {
+//     html2pdf(el, opt);
+//   });
+// };
+
+// setTimeout(function pdfDivload() {
+// let el = document.getElementById('printMe');
+// let opt = {
+//   // margin: 1,
+//   filename: 'myfile.pdf',
+//   image: { type: 'jpeg', quality: 0.98 },
+//   // html2canvas: { scale: 1 },
+//   jsPDF: { unit: 'cm', format: 'A4', orientation: 'portrait' },
+// };
+// html2pdf().set(opt).from(el).toPdf().save();
+
+// function sendEmail(file) {}
+// const file = html2pdf()
+//   .set(opt)
+//   .from(el)
+//   .toPdf()
+//   .outputPdf('dataurl')
+//   .then(function (pdf) {
+//     // let data = {
+//     //   fileDataURI: pdf,
+//     // };
+//     // // // $.post( "../mail.php", data);
+//     // // console.log(data);
+//     // // console.log(data);
+//     // return data;
+//     Email.send({
+//       Host: 'smtp.gmail.com',
+//       Username: 'vusimuzivks@gmail.com',
+//       Password: 'ktiwzfaihabzrvnq',
+//       To: 'vusimuzivks@gmail.com',
+//       From: 'vusimuzivks@gmail.com',
+//       Subject: 'Sending Email using javascript',
+//       Body: 'Well that was easy!!',
+//       Attachments: [
+//         {
+//           name: 'fileName.pdf',
+//           data: pdf,
+//         },
+//       ],
+//     }).then(function (message) {
+//       alert('mail sent successfully');
+//     });
+//   });
+// // html2pdf()
+// //   .from(el)
+// //   .outputPdf()
+// //   .then(function (pdf) {
+// //     // This logs the right base64
+// //     console.log(pdf);
+// //   });
+
+// let worker = html2pdf()
+//   .set(opt)
+//   .from(el)
+//   .toPdf()
+//   .output('blob')
+//   .then((Blob) => {
+//     return Blob;
+//   });
+// // console.log(worker);
+// function blobToFile(theBlob, fileName) {
+//   return new File([theBlob], fileName, {
+//     lastModified: new Date().getTime(),
+//     type: theBlob.type,
+//   });
+// }
+// const t = blobToFile(worker.Blob, 'fileName');
+// var dataUri = Promise.resolve(file);
+// console.log(dataUri);
+// html2pdf()
+//   .from(el)
+//   .outputPdf()
+//   .then(function (pdf) {
+//     // This logs the right base64
+//     console.log(btoa(pdf));
+//   });
+
+// sendEmail(t);
+// }, 3000);
+//  </script>
+
+.InVOVO {
+  * {
+    box-sizing: border-box;
+    font-family: "Calibri";
+  }
+  .page {
+    background-color: white;
+    box-shadow: 5px 5px 10px #ddd;
+    width: 21cm;
+    height: 26cm;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-end;
+  }
+  header {
+    > h1 {
+      text-align: right;
+      font-size: 4rem;
+    }
+    .divide {
+      display: flex;
+      height: 3cm;
+      width: 100%;
+      margin: 0.5rem 0;
+      > .img {
+        background-image: url("./logo.png");
+        // background-image: attr(data-image-src url);
+        // background: red;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50%;
+        height: 3cm;
+        // filter: invert(1);
+        // -webkit-filter: invert(1);
+        //opacity: 0.5;
+      }
+    }
+    .box {
+      // border: 1px solid #ddd;
+      width: 50%;
+      height: 3cm;
+    }
+    .info {
+      tr {
+        float: right;
+        td:nth-child(1) {
+          border: none;
+          padding-right: 1rem;
+        }
+        td:nth-of-type(2) {
+          // border: 1px black;
+          // border-top: none;
+          &:not(:nth-child(1)) {
+            // border-top: 1px solid #ddd;
+          }
+        }
+      }
+      input {
+        // border: none;
+        // background: red;
+        padding: 0;
+      }
+    }
+  }
+  table,
+  th,
+  td {
+    border: 0.5px solid rgba(170, 170, 170, 0.473);
+    border-collapse: collapse;
+  }
+  th {
+    border: none;
+  }
+  .table {
+    td {
+      border-right: none;
+      border-top: none;
+      &:nth-child(1) {
+        border-left: none;
+      }
+    }
+    tr:nth-last-child(1) td {
+      border-bottom: none;
+    }
+    width: 100%;
+    margin: 1rem 0;
+    tr:nth-of-type(odd) {
+      background-color: #1f497d1c;
+    }
+    td > input {
+      background: transparent;
+    }
+  }
+  .desc {
+    width: 11.7cm;
+  }
+  .qty {
+    width: 1.4cm;
+  }
+  .price {
+    width: 2.6cm;
+  }
+  .amount {
+    width: 3.8cm;
+  }
+  th {
+    padding: 0.3rem 0.5rem;
+    background-color: #1f497d;
+    color: white;
+    font-weight: 900;
+    &:nth-child(1) {
+      padding: 0.3rem 1rem;
+      text-align: left;
+    }
+  }
+  .customer {
+    // background: red;
+    table {
+      // width: 200px;
+      width: 70%;
+    }
+    td {
+      padding: 0.2rem 1rem;
+    }
+    th,
+    td {
+      border: none;
+    }
+    // margin: 0 !important;
+  }
+  .description {
+    // background: red;
+    table {
+      // width: 200px;
+      width: 100%;
+      th,
+      td {
+        border: none;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 2cm;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: 900;
+    }
+    // margin: 0 !important;
+  }
+  .banking {
+    width: 11.7cm;
+
+    td {
+      border: none;
+      padding: 1rem;
+    }
+    tr {
+      padding: 0.1rem;
+    }
+    .i {
+      padding: 0.1rem 1rem;
+      display: flex;
+      label {
+        padding: 0.01rem 0rem;
+        padding-right: 0.5rem;
+      }
+      > input {
+        flex-grow: 1 !important;
+        appearance: none;
+        border: none;
+        font-size: 1rem;
+        &:focus {
+          border-radius: 0;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          -ms-border-radius: 0;
+          -o-border-radius: 0;
+        }
+      }
+    }
+  }
+  td > input {
+    width: 100%;
+    padding: 0.1rem 1rem;
+  }
+  input {
+    appearance: none;
+    border: none;
+    font-size: 11pt;
+  }
+  footer {
+    margin-top: auto;
+    justify-content: flex-end;
+    h3 {
+      text-align: center;
+      border-bottom: 3px solid #ddd;
+      padding: 0.5rem;
+    }
+  }
+}

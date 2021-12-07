@@ -1,0 +1,16 @@
+.page {
+  background: hsl(196, 54%, 84%);
+  height: calc(100vh - 2.5rem);
+  section {
+    padding: 3rem;
+  }
+  .big {
+    background: hsl(90, 54%, 84%);
+  }
+  .small {
+    background: hsl(16, 54%, 84%);
+  }
+  @media screen and (max-width: 1000px) {
+    color: hsl(0, 0%, 100%);
+  }
+}
